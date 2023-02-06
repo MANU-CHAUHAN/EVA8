@@ -29,19 +29,19 @@
 
 Each convolution kernel CONVOLVES, while moving discretely, on the input using each channel of the input feature map and result of each convolution kernel is the sum of the convolution results of each channel. (**Note:** here each channel of the feature map is related to all channels of the input feature map)
 
-![](resources/s7-2.png)
+![image 1](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/s7-2.png)
 
-![](resources/convlayer.svg)
+![image 2](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/convlayer.svg)
 
-![](resources/s7-4.jpeg)
+![image 3](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/s7-4.jpeg)
 
 
 
 ### Group convolutions:
 
-![](resources/s7-3.jpeg)
+![image 4](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/s7-3.jpeg)
 
-![](resources/filtergroups2.svg)
+![image 5](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/filtergroups2.svg)
 
 One of the convolution layer’s parameters in PyTorch is the `groups` parameter. This parameter controls the connections between the input and output channels.
 
@@ -71,7 +71,7 @@ conv = nn.Conv2d(in_channels = 8, out_channels = 4,groups=4)
 
 
 
-![image-20210621140705314](resources/s7-1.png)
+![image-20210621140705314](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/s7-1.png)
 
 
 
@@ -102,7 +102,7 @@ Filter groups (AKA grouped convolution) were introduced in the now seminal [Alex
 
 
 
-<img src="resources/alexnetfilters.png" style="zoom:200%;" />
+<img src="https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/alexnetfilters.png" style="zoom:200%;" />
 
 AlexNet `conv1` filter separation: as noted by the authors, filter groups appear to structure learned filters into two distinct groups, black-and-white and colour filters ([Alex Krizhevsky et al. 2012](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks)).
 
@@ -118,9 +118,9 @@ It’s not immediately obvious that filter groups should be of any benefit, but 
 
 
 
-> ![](resources/cifar-nin-4pad-conv8-corr.png)
+> ![](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/cifar-nin-4pad-conv8-corr.png)
 >
-> ![](resources/colorbar.svg)
+> ![](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/colorbar.svg)
 >
 > The correlation matrix between filters of adjacent layers in a Network-in-Network model trained on CIFAR10. Pairs of highly correlated filters are brighter, while lower correlated filters are darker.
 
@@ -132,9 +132,9 @@ We can show this by looking at the correlation across filters of adjacent layers
 
 >
 >
->![](resources/cifar-nin-groupanimation.gif)
+>![](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/cifar-nin-groupanimation.gif)
 
-> ![](resources/colorbar.svg)
+> ![](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/colorbar.svg)
 >
 > The correlations between filters of adjacent layers in a Network-in-Network model trained on CIFAR10, when trained with 1, 2, 4, 8 and 16 filter groups.
 
@@ -155,7 +155,7 @@ The effect of filter groups is to learn with a *block-diagonal* structured spars
 
 
 
-<img src="resources/dilated-conv-1.png" style="zoom:150%;" />
+<img src="https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/resources/dilated-conv-1.png" style="zoom:150%;" />
 
 - Figure (a) is a 1-dilated 3x3 convolution filter. In other words, it's a standard 3x3 convolution filter.
 - Figure (b) is a 2-dilated 3x3 convolution filter. The red dots are where the weights are and everywhere else is 0. In other words, it's a **5x5 convolution filter with 9 non-zero weights and everywhere else 0**, as mentioned in the question. The receptive field in this case is 7x7 because each unit in the previous output has a receptive field of 3x3. The highlighted portions in blue show the receptive field and **NOT** the convolution filter (you could see it as a convolution filter if you wanted to but it's not helpful).
