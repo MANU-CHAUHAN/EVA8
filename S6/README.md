@@ -1,6 +1,6 @@
 # Session6:
 
-**Notebook:** 95K parameters and 85+% val accuracy:: [notebook](link)
+**Notebook:** 95K parameters and 85+% val accuracy:: [notebook](https://github.com/MANU-CHAUHAN/EVA8/blob/main/S6/EVA8_S6_95K_params__85_.ipynb)
 
 #### Aumentations used:
 
